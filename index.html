@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=0">
         <title>Tic-Tac-Toe</title>
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
         <script src="./scripts/app.js" defer></script>
         <link rel="stylesheet" href="./styles/main.css">
     </head>
@@ -17,17 +18,27 @@
 
 <template id="login-template">
     <section id="login-screen">
-        <header>Hey there!</header>
+        <header>Tic Tac Toe</header>
         <div class="user-data">
-            <input id="player1" placeholder="Player 1">
-            <input id="player2" placeholder="Player 2" >
+            <input id="playerName1" placeholder="Player 1">
+            <input id="playerName2" placeholder="Player 2" >
         </div>
-        <div><button>Let's play!</button></div>
+        <div><button disabled id="play-button" onclick="play()">Play</button></div>
     </section>
 </template>
 
 <template id="game-template">
     <section id="game-screen">
+        <header>
+            <section id="player1" class="player-detail">
+                <span class="player-name"></span>
+                <span class="player-move"></span>
+            </section>
+            <section id="player2" class="player-detail">
+                <span class="player-name"></span>
+                <span class="player-move"></span>
+            </section>
+        </header>
         <div id="grid-container"></div>
     </section> 
 </template>
