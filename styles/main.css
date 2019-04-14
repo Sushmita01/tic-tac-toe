@@ -60,9 +60,14 @@ main {
     background-color: #FFC107;
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.3em;
+    cursor: pointer;
+}
+#play-button:hover {
+    border: 2px grey solid;  
 }
 
 #play-button:disabled {
+    cursor: not-allowed;
     color: #c1b4af;
     background-color: rgb(243, 216, 125);
 }
@@ -111,7 +116,7 @@ main {
 }
 
 .active-player {
-    border-bottom: 5px red solid;
+    border-bottom: 10px red solid;
 }
 
 .player-name {
