@@ -58,12 +58,10 @@ function play() {
         player2=new Player(input2.value,"O");   //player 2 plays with O
         loginScreen=document.querySelector('#login-screen');
         loginScreen.parentNode.removeChild(loginScreen);
-        initializeGameScreen();
-    
+        initializeGameScreen();  
 }
 
 function initializeGameScreen() {
-    showLetsPlayModal();
     let gameTemplate=document.getElementById('game-template');
     main.innerHTML=gameTemplate.innerHTML;
     playerOneDetail=document.getElementById('player1');
