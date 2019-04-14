@@ -58,6 +58,7 @@ main {
     color: #3a2020;
     border-radius: 5px;
     background-color: #FFC107;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 1.3em;
 }
 
@@ -140,7 +141,7 @@ main {
     border-top: 5px solid #5f2e2e; 
 }
 
-.row:first-child {
+.row:nth-child(1) {
     border: none;
 }
 
@@ -190,4 +191,47 @@ main {
   .cross:after {
     transform: rotate(-45deg);
   }
+
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(128, 138, 46, 0.38); /* Black w/ opacity */
+  }
+
+  .modal-content {
+    width: 40%;
+    height: 30%;
+    margin: auto;
+    background-color: #231b1b;
+    border-radius: 10px;
+    font-size: 1.5em;
+    border: 5px #100f0f solid;
+    font-family: 'Courier New', Courier, monospace;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+
+}
+
+.modal-content .winner {
+    width:100%;
+    color: #FFC107;
+    font-size: 2em;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.play-again {
+    font-size:1em;
+    padding: 10px;
+}
  

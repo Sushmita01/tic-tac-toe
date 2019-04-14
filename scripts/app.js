@@ -12,6 +12,7 @@ var playerTwoMoveDetail;
 var totalMoves=0
 var isFirstMove = true;  //boolean
 var currentPlayer;
+var winner;
 
 class Player {
     constructor(name,symbol) {
@@ -149,6 +150,7 @@ function checkBoardStatus() {
         // console.log("row",r,"flag",flag)
         if (flag==1) {
             console.log("row-match found",r);
+            setWinner();
         }
     }
 
@@ -164,6 +166,7 @@ function checkBoardStatus() {
         // console.log("col",c,"flag",flag)
         if (flag==1) {
             console.log("col-match found",c);
+            setWinner();
         }
     }
     
@@ -171,13 +174,23 @@ function checkBoardStatus() {
     //check for right diagonal
     if (gameMatrix[0][0]==currSymbol && gameMatrix[1][1]==currSymbol && gameMatrix[2][2]==currSymbol) {
         console.log("right diagonal match!");
+        setWinner();
     }
 //check for right diagonal
     if (gameMatrix[0][2]==currSymbol && gameMatrix[1][1]==currSymbol && gameMatrix[2][0]==currSymbol) {
         console.log("left diagonal match!");
+        setWinner();
 
     }
 }
 
+
+function setWinner() {
+    currentPlayer.winner=true;
+    winner=currentPlayer.name;
+    modal = document.getElementById('result-modal');
+    document.getElementsByClassName('winner')[0].innerHTML=winner;
+    modal.style.display = "block";
+}
 initializeLoginScreen()
 
