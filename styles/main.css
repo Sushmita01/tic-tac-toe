@@ -141,7 +141,7 @@ main {
     border-top: 5px solid #5f2e2e; 
 }
 
-.row:nth-child(1) {
+#row0 {
     border: none;
 }
 
@@ -224,7 +224,6 @@ main {
 }
 
 .modal-content .winner {
-    width:100%;
     color: #FFC107;
     font-size: 2em;
     font-family: 'Permanent Marker', cursive;
