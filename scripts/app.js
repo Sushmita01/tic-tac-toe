@@ -62,12 +62,8 @@ function play() {
     
 }
 
-// function showLetsPlayModal() {
-//     let modal=document.createElement('div').classList.add('start-modal')
-//     document.getElementById('game-template').appendChild(modal);
-// }
-
 function initializeGameScreen() {
+    showLetsPlayModal();
     let gameTemplate=document.getElementById('game-template');
     main.innerHTML=gameTemplate.innerHTML;
     playerOneDetail=document.getElementById('player1');
