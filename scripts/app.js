@@ -117,7 +117,7 @@ function setMove(row,column) {
 
         }
 
-
+        checkBoardStatus();  
         //toggling player
         currentPlayer==player1  ? currentPlayer=player2 : currentPlayer=player1;
 
@@ -125,12 +125,58 @@ function setMove(row,column) {
         playerTwoDetail.classList.toggle('active-player');
         playerOneDetail.classList.toggle('active-player');
     }
+
     if (totalMoves==9) {
         console.log("game over!");
         alert("game over!")
     }
     else
     console.log(`Next Player`,currentPlayer.name);
+}
+
+function checkBoardStatus() {
+    let currSymbol=currentPlayer.symbol;
+    console.log("checking for",currSymbol);
+    //check for row match
+    for (let r=0;r<ROW_NUM;r++) {
+        flag=1;
+        for (let c=0;c<COL_NUM;c++) {
+            if (gameMatrix[r][c]!=currSymbol) {
+                flag=0;
+                break;
+            }
+        }
+        // console.log("row",r,"flag",flag)
+        if (flag==1) {
+            console.log("row-match found",r);
+        }
+    }
+
+    //check for column match
+    for (let c=0;c<COL_NUM;c++) {
+        flag=1;
+        for (let r=0;r<ROW_NUM;r++) {
+            if (gameMatrix[r][c]!=currSymbol) {
+                flag=0;
+                break;
+            }
+        }
+        // console.log("col",c,"flag",flag)
+        if (flag==1) {
+            console.log("col-match found",c);
+        }
+    }
+    
+
+    //check for right diagonal
+    if (gameMatrix[0][0]==currSymbol && gameMatrix[1][1]==currSymbol && gameMatrix[2][2]==currSymbol) {
+        console.log("right diagonal match!");
+    }
+//check for right diagonal
+    if (gameMatrix[0][2]==currSymbol && gameMatrix[1][1]==currSymbol && gameMatrix[2][0]==currSymbol) {
+        console.log("left diagonal match!");
+
+    }
 }
 
 initializeLoginScreen()
